@@ -1,15 +1,27 @@
-body,html,#cd-bg-1{
+body,html{
   margin: 0;
   padding: 0;
   height: 100%;
 }
+/*nav bar*/
+.navigatorTop{
+  height: auto;
+  margin-top: 0px;
+  text-align: center;
+}
 
+#logoTitle{
+  font-family: 'Berkshire Swash', cursive;
+}
+
+/*content*/
 #cd-bg-1{
   background-image: url("../images/Background/bg1.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center left;
   text-align: center;
+  height: 100%;
 }
 
 #firstSlidesecond {
@@ -61,16 +73,49 @@ body,html,#cd-bg-1{
 
 #cd-bg-3{
   background-image: url("../images/Background/bg3a.jpg");
-  /*background-size: cover;*/
   background-repeat: repeat;
   background-position: center left;
   text-align: center;
   height: 100%;
 }
 
+@media (max-width: 768px){
+  #cd-bg-3{
+  background-image: url("../images/Background/bg3a.jpg");
+  background-repeat: repeat;
+  background-position: center left;
+  text-align: center;
+  height:1200px;
+  } 
+}
+
+}
+.subscribeHapi{
+  padding:0;
+  margin:0;
+  border:0;
+}
+
+/*.img-zoom img{
+margin:auto;
+height:100px;
+width:100px;
+-moz-transition:-moz-transform 0.5s ease-in; 
+-webkit-transition:-webkit-transform 0.5s ease-in; 
+-o-transition:-o-transform 0.5s ease-in;
+}
+.img-zoom img:hover{
+-moz-transform:scale(2); 
+-webkit-transform:scale(2);
+-o-transform:scale(2);
+}*/
+
+h4{
+  text-align: center;
+}
 /*--------subscribe circle-----------*/
 ul {
-  margin: 30px auto;
+  margin: auto auto; /*used to be 30*/
   text-align: center;
 }
 
@@ -78,8 +123,8 @@ li {
   list-style: none;
   position: relative;
   display: inline-block;
-  width: 100px;
-  height: 100px;
+  width: 70px; /*used to be 100*/
+  height: 70px;/*used to be 100*/
 }
 
 @-moz-keyframes rotate {
@@ -109,10 +154,10 @@ li {
   top: 0;
   width: 100%;
   height: 100%;
-  padding-top: 30px;    
+  padding-top: 15px;  /*used to be 30*/  
   text-decoration: none;    
   text-align: center;
-  font-size: 25px;    
+  font-size: 20px;    /*used to be 25*/  
   text-shadow: 0 1px 0 rgba(255,255,255,.7);
   letter-spacing: -.065em;
   font-family: "Hammersmith One", sans-serif;   
@@ -122,18 +167,18 @@ li {
   transition: all .25s ease-in-out;
   box-shadow: 2px 2px 7px rgba(0,0,0,.2);
   border-radius: 300px;
-  z-index: 1;
-  border-width: 4px;
+  z-index: 0;
+  border-width: 2px; /*used to be 4*/  
   border-style: solid;
 }
 
 .round:hover {
-  width: 130%;
-  height: 130%;
-  left: -15%;
-  top: -15%;
-  font-size: 33px;
-  padding-top: 38px;
+  width: 150%;
+  height: 150%;
+  left: -25%;
+  top: -25%;
+  font-size: 0px; /*used to be 33*/  
+  padding-top: 0px; /*used to be 38*/  
   -webkit-box-shadow: 5px 5px 10px rgba(0,0,0,.3);
   -o-box-shadow: 5px 5px 10px rgba(0,0,0,.3);
   -moz-box-shadow: 5px 5px 10px rgba(0,0,0,.3);
@@ -221,3 +266,9 @@ a.yellow:hover {
   height: 100%;
   /*opacity:0.5;*/
 }
+
+.btn-block{
+  display:block;
+  width:100%;
+}
+
