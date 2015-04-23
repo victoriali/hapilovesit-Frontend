@@ -30,10 +30,10 @@
     <!--Nav Bar-->
     <div class="navigatorTop">
       <div class="logoBrand">
-        <span><h1 id="logoTitle">Hapilovesit</h1>
-        <img src="../images/heart-logo2.jpg" class="heart-ogo" height="30px" width="auto"></span>
+        <h1 id="logoTitle">Hapilovesit
+        <span><img src="../images/heart-logo2.jpg" class="heart-logo" height="30px" width="auto" position="center"></span>
+        </h1>
         
-
       </div>
       <ul class="nav">
       <span>
@@ -43,8 +43,10 @@
         <li class="text-uppercase"><a href="#">ACCOUNT</a></li> 
       </span>
       </ul>
+     <!--  <div class="power-container">
+        <img src="../images/logobear.jpg" class="img-circle" height="70px" width="100px">
+      </div> -->
     </div>
-
 
     <!--First Slide-->
     <div id = "cd-bg-1">
@@ -163,7 +165,7 @@
                   <!--signInPassword-->
                   <div class="input-group">
                     <span class="input-group-addon" id="basic-addon1">x</span>
-                    <input type="text" class="form-control" placeholder="Password" aria-describedby="basic-addon1" id="signInPassword">
+                    <input type="text" class="form-control" placeholder="Password" aria-describedby="basic-addon1" id="signInUserPassword">
                   </div>
                   <!--signInButton-->
                   <button type="button" class="btn btn-block btn-primary" id="signInButton">Sign In</button>
@@ -171,23 +173,26 @@
                   <h5>--- or ---</h5>
                   <br>
                   <div class= "vert-offset-top-1">
+                    <div>
+                      <h5 id="warningAlreadySignUp"></h5>
+                    </div>
                     <!--signUpUsername-->
                     <div class="input-group">
                       <span class="input-group-addon" id="basic-addon1">:)</span>
-                      <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1" id="signInUsername">
+                      <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1" id="signUpUsername">
                     </div>
                     <!--signUpUseremail-->
                     <div class="input-group">
                       <span class="input-group-addon" id="basic-addon1">@</span>
-                      <input type="text" class="form-control" placeholder="Your email" aria-describedby="basic-addon1" id="signInPassword">
+                      <input type="text" class="form-control" placeholder="Your email" aria-describedby="basic-addon1" id="signUpUserEmail">
                     </div>
                     <!--signUpUserpassword-->
                     <div class="input-group">
                       <span class="input-group-addon" id="basic-addon1">x</span>
-                      <input type="text" class="form-control" placeholder="Password" aria-describedby="basic-addon1" id="signInPassword">
+                      <input type="text" class="form-control" placeholder="Password" aria-describedby="basic-addon1" id="signUpUserPassword">
                     </div>
                     <!--signUpButton-->
-                    <button type="button" class="btn btn-block btn-primary" id="signInButton">Sign Up</button>
+                    <button type="button" class="btn btn-block btn-primary" id="signUpButton">Sign Up</button>
                   </div>
                 </div>
                 <div class="col-sm-1"></div>
@@ -199,5 +204,26 @@
       </div>
     </div>
     <!--End of account-->
+    <!--Summary-->
+    <div id = "cd-bg-5">
+      <div class = "verticalcover">
+        <div class = "content-cover">
+          
+        </div>
+      </div>
+    </div>
+    <!--End of Summary-->
+
+    <!--warning already signup modal-->
+    <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">Small modal</button>
+
+    <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+      ...
+        </div>
+      </div>
+    </div> -->
+    <!--end of already signup modal-->
   </body>
 </html>

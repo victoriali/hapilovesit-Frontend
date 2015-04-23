@@ -3,6 +3,7 @@ body,html{
   padding: 0;
   height: 100%;
 }
+
 /*nav bar*/
 .navigatorTop{
   height: auto;
@@ -24,9 +25,8 @@ ul.nav {
   list-style-type: none;     
   padding-left: 0;     
   margin-left: 0;     
-  padding-top: 6px;     
-  padding-bottom: 5px;     
-  border-bottom: 1px;
+  padding-top: 10px;         
+  margin-bottom: 10px;
 }
 
 ul.nav a {  
@@ -48,6 +48,18 @@ ul.nav a {
 
 ul.nav li{
   display:inline;
+}
+
+/*---come back later*/
+.power-container{
+  background-color:none;
+  display:block;
+}
+
+@media (max-width: 768px){
+  .power-container{
+    display:none;
+  }
 }
 
 /*content*/
@@ -307,4 +319,17 @@ a.yellow:hover {
   display:block;
   width:100%;
 }
+
+#cd-bg-5{
+  background-image: url("../images/Background/bg4.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top left;
+  text-align: center;
+  height: 100%;
+  /*opacity:0.5;*/
+}
+
+/*---------User area----------*/
+
 
