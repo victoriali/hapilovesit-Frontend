@@ -1,7 +1,10 @@
 $(document).ready(function(){
+//---------------Hide user login page at first--------------
+// $('#cd-bg-5').hide();
 
 //-------------- Signup && SignIn && Authenticate Redirect-----------------
 	$('#signUpButton').on("click", function(){
+		//-----------------signup------------------------
 		$.ajax({
 	    type: "POST",
 	    url: "http://localhost:3000/users",
@@ -23,7 +26,7 @@ $(document).ready(function(){
 	    	}
       	console.log(response);
 
-      	//and also sign in using same username
+      	//------------login--------------------
 	    	$.ajax({
 			    type: "POST",
 			    url: "http://localhost:3000/sessions",
@@ -40,10 +43,86 @@ $(document).ready(function(){
 			    success: function(response){
 		      	console.log(response);
 		      	console.log('signedin');
-		      	
+		      	//------------authenticated redirect------------------------
+		      	$.ajax({
+	    				type: "GET",
+					    url: "http://localhost:3000/authenticated",
+				      xhrFields: {
+				  			withCredentials: true
+					    },
+					    success: function(response){
+				      	console.log(response);
+				      	console.log('authenticate');
+				      	if(response.message==="Authenticated"){
+				      		$('#cd-bg-5').show('slow');
+				      		$('#loginGreeting').text('HI '+$('#signUpUsername').val()+", YOU ARE LOGGED IN");
+
+				      	}
+							}
+						});
+						//------------end of authenticated redirect----------------------
 		  		}
 				});
+				//---------------end of login---------------------
 	    }
 		});
 	});
+	//---------------end of signup---------------
+
+
+	//--------------sign in-------------------
+	$('#signInButton').on("click", function(){
+		$.ajax({
+	    type: "POST",
+	    url: "http://localhost:3000/sessions",
+	    dataType: 'json',
+	    data: {
+        user: {
+          username: $('#signInUsername').val(),
+		      password: $('#signInUserPassword').val()
+        }
+      },
+      xhrFields: {
+  			withCredentials: true
+	    },
+	    success: function(response){
+      	console.log(response);
+      	console.log('signedin');
+		      	//------------authenticated redirect------------------------
+	      	$.ajax({
+    				type: "GET",
+				    url: "http://localhost:3000/authenticated",
+			      xhrFields: {
+			  			withCredentials: true
+				    },
+				    success: function(response){
+			      	console.log(response);
+			      	console.log('authenticate');
+			      	if(response.message==="Authenticated"){
+			      		$('#cd-bg-5').show('slow');
+			      		$('#loginGreeting').text('HI '+$('#signInUsername').val()+", YOU ARE LOGGED IN");
+			      	}
+						}
+					});
+						//------------end of authenticated redirect----------------------	    
+			}
+	  });
+	});
+
+	//---------------Log out---------------
+	$('#signOutButton').on("click", function(){
+	  console.log("Hello World SignOut");
+		$.ajax({
+		    type: "DELETE",
+		    url: "http://localhost:3000/sessions",
+	      xhrFields: {
+    			withCredentials: true
+  	    },
+		    success: function(response){
+		      	console.log(response);
+		      	// $('#cd-bg-5').hide();
+		    }
+		});
+	});
+	//------------End of Log out------------
 });

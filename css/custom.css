@@ -320,6 +320,8 @@ a.yellow:hover {
   width:100%;
 }
 
+/*---------Login area----------*/
+
 #cd-bg-5{
   background-image: url("../images/Background/bg4.jpg");
   background-size: cover;
@@ -327,9 +329,12 @@ a.yellow:hover {
   background-position: top left;
   text-align: center;
   height: 100%;
-  /*opacity:0.5;*/
 }
 
-/*---------User area----------*/
+#shoppingcartCover{
+  background-color:white;
+}
 
-
+ul.nav.nav-tabs li{
+  display:inline;
+}

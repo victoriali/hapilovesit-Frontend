@@ -16,6 +16,7 @@
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="js/app.js"></script>
+    <script src="js/user.js"></script>
     <script src="js/bootstrap.min.js"></script>
     
     <!--font style-->
@@ -30,17 +31,18 @@
     <!--Nav Bar-->
     <div class="navigatorTop">
       <div class="logoBrand">
+        <a href="#">
         <h1 id="logoTitle">Hapilovesit
         <span><img src="../images/heart-logo2.jpg" class="heart-logo" height="30px" width="auto" position="center"></span>
         </h1>
-        
+        </a>       
       </div>
       <ul class="nav">
       <span>
-        <li class="text-uppercase"><a href="#">SUBSCRIBE</a></li>
-        <li class="text-uppercase"><a href="#">HOW IT WORKS</a></li>
-        <li class="text-uppercase"><a href="#">PAST HAPIBOX</a></li> 
-        <li class="text-uppercase"><a href="#">ACCOUNT</a></li> 
+        <li class="text-uppercase"><a href="#cd-bg-3" class="smoothScroll">SUBSCRIBE</a></li>
+        <li class="text-uppercase"><a href="#" class="smoothScroll">HOW IT WORKS</a></li>
+        <li class="text-uppercase"><a href="#" class="smoothScroll">PAST HAPIBOX</a></li> 
+        <li class="text-uppercase"><a href="#cd-bg-4" class="smoothScroll">ACCOUNT</a></li> 
       </span>
       </ul>
      <!--  <div class="power-container">
@@ -154,7 +156,7 @@
           <div class="row">
             <div class="col-sm-12">
               <div class="col-sm-1"></div>
-              <div class="col-sm-10 ">
+              <div class="col-sm-10">
                 <div class="col-sm-1"></div>
                 <div class="col-sm-10" id = "signInloginBox">
                   <!--signInUsername-->
@@ -168,7 +170,7 @@
                     <input type="text" class="form-control" placeholder="Password" aria-describedby="basic-addon1" id="signInUserPassword">
                   </div>
                   <!--signInButton-->
-                  <button type="button" class="btn btn-block btn-primary" id="signInButton">Sign In</button>
+                  <button type="button" class="btn btn-block btn-primary" id="signInButton" data-toggle="modal" data-target=".signingIn">Sign In</button>
                   <br>
                   <h5>--- or ---</h5>
                   <br>
@@ -204,26 +206,116 @@
       </div>
     </div>
     <!--End of account-->
-    <!--Summary-->
-    <div id = "cd-bg-5">
-      <div class = "verticalcover">
-        <div class = "content-cover">
-          
-        </div>
-      </div>
-    </div>
-    <!--End of Summary-->
-
-    <!--warning already signup modal-->
-    <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">Small modal</button>
-
-    <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-sm">
+    <!--modal for user sign in-->
+    <!-- <div class="modal fade signingIn" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
         <div class="modal-content">
-      ...
+          <div class="modal-header">
+            <h4 class="modal-title greetingArea" id="gridSystemModalLabel">
+              <button type="button" class="btn btn-primary" id="signOut"><span>SignOut</span></button>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </h4>
+          </div>
+          <div class="modal-body">
+            <div class="container">
+              <div id="postTweet">
+                <h4 class="postTweets">Post a New Tweet</h4>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div> -->
-    <!--end of already signup modal-->
+    <!--End of modal for user-->
+    <!--Summary-->
+      <div id = "cd-bg-5">
+        <div class = "verticalcover">
+          <h2 class="secondSlidefirst" id="loginGreeting">GREETING
+          <span><button type="button" class="btn btn-block btn-primary" id="signOutButton">LOG OUT</button></span></h2>
+            <div class = "container">
+              <div class="row">
+                <div class="col-sm-12">
+                  <div class="col-sm-1"></div>
+                  <div class="col-sm-10">
+                    <div id="shoppingcartCover">
+                    <!--div for nav-->
+                      <div class="signIn nav">
+                        <ul class="nav nav-tabs">
+                          <li role="presentation" class="active"><a href="#">Summary</a></li>
+                          <li role="presentation"><a href="#">Shopping Cart</a></li>
+                          <li role="presentation"><a href="#">Shipping</a></li>
+                          <li role="presentation"><a href="#">Address</a></li>
+                          <li role="presentation"><a href="#">Confirmation</a></li>
+                        </ul>
+                      </div>
+                    <!---end div for nav-->
+                    <!--div for logged in content-->
+                    <!--div for summary-->
+                      <div class="summary">
+                        <h3>YOUR SUBSCRIPTION</h3>
+                        <br>
+                        <table style="width:100%">
+                          <tr id="tableTitleSummary">
+                            <td>Product</td>
+                            <td>Price</td>
+                            <td>Quantity</td>
+                            <td>Date</td>
+                          </tr>
+                        </table>
+                      </div>
+                    <!--end of div for summary-->
+                    <!--div for shopping cart-->
+                      <div class="shoppingcart">
+                        <h3>SHOPPING CART</h3>
+                        <br>
+                        <table style="width:100%">
+                          <tr id="tableTitleSummary">
+                            <td>Item</td>
+                            <td>Price</td>
+                            <td>Quantity</td>
+                            <td>Add/Remove</td>
+                          </tr>
+                          <tr>
+                            <td>Total</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                          </tr>
+                        </table>
+                      </div>
+                    <!--end of div for shopping cart-->
+                    <!--div for shipping-->
+                      <div class="shipping">
+                        <h3>SHIPPING DETAILS</h3>
+                        <br>
+                        <form accept-charset="UFT-8" class="simple_formlight-labels" id="shippingForm">
+                        </form>
+                      </div>
+                    <!--end of div for shipping-->
+                    <!--div for address-->
+                      <div class="address">
+                        <h3>ADDRESS</h3>
+                        <br>
+                      </div>
+                    <!--end of div for address-->
+                    <!--div for submit-->
+                      <div class="submit">
+                        <br>
+                        <div class="jumbotron">
+                          <h1>HELLO</h1>
+                          <p>EXCITED? WE ARE ALMOST THERE...</p>
+                          <p><a class="btn btn-primary btn-lg" href="#" role="button">SUBMIT</a></p>
+                        </div>
+                      </div>
+                    <!--end of div for submit-->
+                    </div>
+                  </div>
+                  <div class="col-sm-1"></div>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+    <!--End of Summary-->
   </body>
 </html>
