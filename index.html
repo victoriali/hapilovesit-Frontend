@@ -230,13 +230,13 @@
     <!--Summary-->
       <div id = "cd-bg-5">
         <div class = "verticalcover">
-          <h2 class="secondSlidefirst" id="loginGreeting">GREETING
-          <span><button type="button" class="btn btn-block btn-primary" id="signOutButton">LOG OUT</button></span></h2>
+          <h2 class="secondSlidefirst" id="loginGreeting">GREETING</h2>
             <div class = "container">
               <div class="row">
                 <div class="col-sm-12">
                   <div class="col-sm-1"></div>
                   <div class="col-sm-10">
+                    <button type="button" class="btn btn-block btn-primary" id="signOutButton">LOG OUT</button>
                     <div id="shoppingcartCover">
                     <!--div for nav-->
                       <div class="signIn nav">
@@ -284,8 +284,11 @@
                         </table>
                       </div>
                     <!--end of div for shopping cart-->
-                    <!--div for shipping-->
-                      <div class="shipping">
+                    <!--div for address-->
+
+                    <div class="address">
+                      <!--div for shipping address-->
+                      <div class="shippingAddress">
                         <h3>SHIPPING DETAILS</h3>
                         <br>
                         <form class="form-horizontal">
@@ -341,27 +344,109 @@
                             <div class="col-sm-offset-2 col-sm-10">
                               <div class="checkbox">
                                 <label>
-                                  <input type="checkbox"> Remember me
+                                  <input type="checkbox"> Billing Address same as Shipping Address?
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                        </form>
+                      <!--end of div for shipping address-->
+
+                      <!--div for billing address-->
+                      <div class="billingAddress">
+                        <h3>BILLING DETAILS</h3>
+                        <br>
+                        <form class="form-horizontal">
+                          <div class="form-group">
+                            <label for="bFirstName" class="col-sm-2 control-label">First Name</label>
+                            <div class="col-sm-10">
+                              <input type="bFirstName" class="form-control" id="bFirstName" placeholder="First Name">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="bLastName" class="col-sm-2 control-label">Last Name</label>
+                            <div class="col-sm-10">
+                              <input type="bLastName" class="form-control" id="bLastName" placeholder="Last Name">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="bStreet" class="col-sm-2 control-label">Street</label>
+                            <div class="col-sm-10">
+                              <input type="bStreet" class="form-control" id="bStreet" placeholder="Street">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="bCity" class="col-sm-2 control-label">City</label>
+                            <div class="col-sm-10">
+                              <input type="bCity" class="form-control" id="bCity" placeholder="City">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="bState" class="col-sm-2 control-label">State</label>
+                            <div class="col-sm-10">
+                              <input type="bState" class="form-control" id="bState" placeholder="State">
+                            </div>
+                          </div>
+                           <div class="form-group">
+                            <label for="bPostalCode" class="col-sm-2 control-label">PostalCode</label>
+                            <div class="col-sm-10">
+                              <input type="bPostalCode" class="form-control" id="bPostalCode" placeholder="Postal Code">
+                            </div>
+                          </div>
+                           <div class="form-group">
+                            <label for="bCountry" class="col-sm-2 control-label">Country</label>
+                            <div class="col-sm-10">
+                              <input type="bCountry" class="form-control" id="bCountry" placeholder="Country">
+                            </div>
+                          </div>
+                           <div class="form-group">
+                            <label for="bPhone" class="col-sm-2 control-label">Phone</label>
+                            <div class="col-sm-10">
+                              <input type="bPhone" class="form-control" id="bPhone" placeholder="Phone">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                              <div class="checkbox">
+                                <label>
+                                  <input type="checkbox"> Billing Address same as Shipping Address?
                                 </label>
                               </div>
                             </div>
                           </div>
                           <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-10">
-                              <button type="submit" class="btn btn-default">Sign in</button>
+                              <button type="next" class="btn btn-primary">NEXT</button>
                             </div>
                           </div>
                         </form>
-                   
+                      <!--end of div for billing address-->
+                    </div>
+                    <!--end of div for address-->
+                    <!--div for shipping method-->
+                      <div class="shippingMethod">
+                        <h3>SHIPPING METHOD</h3>
+                        <br>
+                        <div class="form-group">
+                          <div class="col-sm-offset-2 col-sm-10">
+                            <div class="checkbox">
+                              <label id="smallShipping">
+                                <input type="checkbox">Standard Shipping (Free)
+                              </label>
+                              <br>
+                              <label id="mediumShipping">
+                                <input type="checkbox">Priority Shipping (+$5)
+                              </label>
+                              <br>
+                              <label id="largeShipping">
+                                <input type="checkbox">Priority Shipping with Signature(+$10)
+                              </label>
+                            </div>
+                          </div>
+                        </div>
 
                       </div>
-                    <!--end of div for shipping-->
-                    <!--div for address-->
-                      <div class="address">
-                        <h3>ADDRESS</h3>
-                        <br>
-                      </div>
-                    <!--end of div for address-->
+                    <!--end of div for shipping method-->
                     <!--div for submit-->
                       <div class="submit">
                         <br>
