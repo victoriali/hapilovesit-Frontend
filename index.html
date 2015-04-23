@@ -17,6 +17,7 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="js/app.js"></script>
     <script src="js/user.js"></script>
+    <script src="js/cal.js"></script>
     <script src="js/bootstrap.min.js"></script>
     
     <!--font style-->
@@ -92,11 +93,11 @@
                     <h4>MINIHAPI BOX</h4>
                     <div class = "Hapihot">
                       <ul>
-                        <li><a href="#" class="round green">monthly<span class="round">$10 per month</span></a></li>
+                        <li><a href="#" class="round green">monthly<span class="round" id="MiniHapiMonthly" value="10">$10 per month</span></a></li>
 
-                        <li><a href="#" class="round red">3-month<span class="round">$8 per month</span></a></li>
+                        <li><a href="#" class="round red">3-month<span class="round" id="MiniHapi3Month" value="8">$8 per month</span></a></li>
 
-                        <li><a href="#" class="round yellow">6-month<span class="round">$7 per month</span></a></li>
+                        <li><a href="#" class="round yellow">6-month<span class="round" id="MiniHapi6Month">$7 per month</span></a></li>
                       </ul> 
                     </div>
                     <div class="col-sm-1"></div>
@@ -110,11 +111,11 @@
                     <h4>HAPI BOX</h4>
                     <div class = "Hapihot">
                       <ul>
-                        <li><a href="#" class="round green">monthly<span class="round">$15 per month</span></a></li>
+                        <li><a href="#" class="round green">monthly<span class="round" id="HapiMonthly">$15 per month</span></a></li>
 
-                        <li><a href="#" class="round red">3-month<span class="round">$14 per month</span></a></li>
+                        <li><a href="#" class="round red">3-month<span class="round" id="Hapi3Month">$14 per month</span></a></li>
 
-                        <li><a href="#" class="round yellow">6-month<span class="round">$13 per month</span></a></li>
+                        <li><a href="#" class="round yellow">6-month<span class="round" id="Hapi6Month">$13 per month</span></a></li>
                       </ul> 
                     </div>
                     <div class="col-sm-1"></div>
@@ -128,11 +129,11 @@
                     <h4>SUPERHAPI BOX</h4>
                     <div class = "Hapihot">
                       <ul>
-                        <li><a href="#" class="round green">monthly<span class="round">$20 per month</span></a></li>
+                        <li><a href="#" class="round green">monthly<span class="round" id="SuperHapiMonthly">$20 per month</span></a></li>
 
-                        <li><a href="#" class="round red">3-month<span class="round">$18 per month</span></a></li>
+                        <li><a href="#" class="round red">3-month<span class="round" id="SuperHapi3Month">$18 per month</span></a></li>
 
-                        <li><a href="#" class="round yellow">6-month<span class="round">$17 per month</span></a></li>
+                        <li><a href="#" class="round yellow">6-month<span class="round" id="SuperHapi6Month">$17 per month</span></a></li>
                       </ul> 
                     </div>
                     <div class="col-sm-1"></div>
@@ -238,225 +239,222 @@
                   <div class="col-sm-10">
                     <button type="button" class="btn btn-block btn-primary" id="signOutButton">LOG OUT</button>
                     <div id="shoppingcartCover">
-                    <!--div for nav-->
-                      <div class="signIn nav">
-                        <ul class="nav nav-tabs">
-                          <li role="presentation" class="active"><a href="#">Summary</a></li>
-                          <li role="presentation"><a href="#">Shopping Cart</a></li>
-                          <li role="presentation"><a href="#">Shipping</a></li>
-                          <li role="presentation"><a href="#">Address</a></li>
-                          <li role="presentation"><a href="#">Confirmation</a></li>
+                      <div role="tabpanel">
+                        <ul class="nav nav-tabs signIn" role="tablist">
+                          <li role="presentation" class="active"><a href="#Summary"       aria-controls="Summary"       role="tab" data-toggle="tab">Summary</a></li>
+                          <li role="presentation">               <a href="#ShoppingCart"  aria-controls="ShoppingCart"  role="tab" data-toggle="tab">Shopping Cart</a></li>
+                          <li role="presentation">               <a href="#Shipping"      aria-controls="Shipping"      role="tab" data-toggle="tab">Shipping</a></li>
+                          <li role="presentation">               <a href="#Address"       aria-controls="Address"       role="tab" data-toggle="tab">Address</a></li>
+                          <li role="presentation">               <a href="#Confirmation"  aria-controls="Confirmation"  role="tab" data-toggle="tab">Confirmation</a></li>
                         </ul>
+
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                          <!--Summary-->
+                          <div role="tabpanel" class="tab-pane fade in active" id="Summary">
+                            <h3>YOUR SUBSCRIPTION</h3>
+                            <br>
+                            <table style="width:100%">
+                              <tr id="tableTitleSummary">
+                                <td>Product</td>
+                                <td>Price</td>
+                                <td>Quantity</td>
+                                <td>Date</td>
+                              </tr>
+                            </table>
+                          </div>
+
+                          <!--Shopping Cart-->
+                          <div role="tabpanel" class="tab-pane fade" id="ShoppingCart">
+                            <h3>SHOPPING CART</h3>
+                            <br>
+                            <table style="width:100%">
+                              <tr id="tableTitleSummary">
+                                <td>Item</td>
+                                <td>Price</td>
+                                <td>Quantity</td>
+                                <td>Add/Remove</td>
+                              </tr>
+                              <tr>
+                                <td>Total</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                              </tr>
+                            </table>
+                          </div>
+
+                          <!--Shipping Method-->
+                          <div role="tabpanel" class="tab-pane fade" id="Shipping">
+                            <h3>SHIPPING METHOD</h3>
+                            <br>
+                            <!-- <div class="form-group">
+                              <div class="col-sm-offset-2 col-sm-10">
+                                <div class="checkbox">
+                                  <label id="smallShipping">
+                                    <input type="checkbox">Standard Shipping (Free)
+                                  </label>
+                                  <br>
+                                  <label id="mediumShipping">
+                                    <input type="checkbox">Priority Shipping (+$5)
+                                  </label>
+                                  <br>
+                                  <label id="largeShipping">
+                                    <input type="checkbox">Priority Shipping with Signature(+$10)
+                                  </label>
+                                </div>
+                              </div>
+                            </div> -->
+                          </div>
+
+                          <!--Address-->
+                          <div role="tabpanel" class="tab-pane fade" id="Address">
+                            <div class="shippingAddress">
+                              <h3>SHIPPING DETAILS</h3>
+                              <br>
+                              <form class="form-horizontal">
+                                <div class="form-group">
+                                  <label for="sFirstName" class="col-sm-2 control-label">Recipient's First Name</label>
+                                  <div class="col-sm-10">
+                                    <input type="sFirstName" class="form-control" id="sFirstName" placeholder="First Name">
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                  <label for="sLastName" class="col-sm-2 control-label">Recipient's Last Name</label>
+                                  <div class="col-sm-10">
+                                    <input type="sLastName" class="form-control" id="sLastName" placeholder="Last Name">
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                  <label for="sStreet" class="col-sm-2 control-label">Street</label>
+                                  <div class="col-sm-10">
+                                    <input type="sStreet" class="form-control" id="sStreet" placeholder="Street">
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                  <label for="sCity" class="col-sm-2 control-label">City</label>
+                                  <div class="col-sm-10">
+                                    <input type="sCity" class="form-control" id="sCity" placeholder="City">
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                  <label for="sState" class="col-sm-2 control-label">State</label>
+                                  <div class="col-sm-10">
+                                    <input type="sState" class="form-control" id="sState" placeholder="State">
+                                  </div>
+                                </div>
+                                 <div class="form-group">
+                                  <label for="sPostalCode" class="col-sm-2 control-label">PostalCode</label>
+                                  <div class="col-sm-10">
+                                    <input type="sPostalCode" class="form-control" id="sPostalCode" placeholder="Postal Code">
+                                  </div>
+                                </div>
+                                 <div class="form-group">
+                                  <label for="sCountry" class="col-sm-2 control-label">Country</label>
+                                  <div class="col-sm-10">
+                                    <input type="sCountry" class="form-control" id="sCountry" placeholder="Country">
+                                  </div>
+                                </div>
+                                 <div class="form-group">
+                                  <label for="sPhone" class="col-sm-2 control-label">Phone</label>
+                                  <div class="col-sm-10">
+                                    <input type="sPhone" class="form-control" id="sPhone" placeholder="Phone">
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                  <div class="col-sm-offset-2 col-sm-10">
+                                    <div class="checkbox">
+                                      <label>
+                                        <input type="checkbox"> Billing Address same as Shipping Address?
+                                      </label>
+                                    </div>
+                                  </div>
+                                </div>
+                              </form>
+                            <!--end of div for shipping address-->
+
+                            <!--div for billing address-->
+                              <h3>BILLING DETAILS</h3>
+                              <br>
+                              <form class="form-horizontal">
+                                <div class="form-group">
+                                  <label for="bFirstName" class="col-sm-2 control-label">First Name</label>
+                                  <div class="col-sm-10">
+                                    <input type="bFirstName" class="form-control" id="bFirstName" placeholder="First Name">
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                  <label for="bLastName" class="col-sm-2 control-label">Last Name</label>
+                                  <div class="col-sm-10">
+                                    <input type="bLastName" class="form-control" id="bLastName" placeholder="Last Name">
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                  <label for="bStreet" class="col-sm-2 control-label">Street</label>
+                                  <div class="col-sm-10">
+                                    <input type="bStreet" class="form-control" id="bStreet" placeholder="Street">
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                  <label for="bCity" class="col-sm-2 control-label">City</label>
+                                  <div class="col-sm-10">
+                                    <input type="bCity" class="form-control" id="bCity" placeholder="City">
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                  <label for="bState" class="col-sm-2 control-label">State</label>
+                                  <div class="col-sm-10">
+                                    <input type="bState" class="form-control" id="bState" placeholder="State">
+                                  </div>
+                                </div>
+                                 <div class="form-group">
+                                  <label for="bPostalCode" class="col-sm-2 control-label">PostalCode</label>
+                                  <div class="col-sm-10">
+                                    <input type="bPostalCode" class="form-control" id="bPostalCode" placeholder="Postal Code">
+                                  </div>
+                                </div>
+                                 <div class="form-group">
+                                  <label for="bCountry" class="col-sm-2 control-label">Country</label>
+                                  <div class="col-sm-10">
+                                    <input type="bCountry" class="form-control" id="bCountry" placeholder="Country">
+                                  </div>
+                                </div>
+                                 <div class="form-group">
+                                  <label for="bPhone" class="col-sm-2 control-label">Phone</label>
+                                  <div class="col-sm-10">
+                                    <input type="bPhone" class="form-control" id="bPhone" placeholder="Phone">
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                  <div class="col-sm-offset-2 col-sm-10">
+                                    <div class="checkbox">
+                                      <label>
+                                        <input type="checkbox"> Billing Address same as Shipping Address?
+                                      </label>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                  <div class="col-sm-offset-2 col-sm-10">
+                                    <button type="next" class="btn btn-primary">NEXT</button>
+                                  </div>
+                                </div>
+                              </form>
+                            </div>
+                          </div>
+
+                          <!--Confirmation-->
+                          <div role="tabpanel" class="tab-pane fade" id="Confirmation">
+                            <br>
+                            <div class="jumbotron">
+                              <h1>HELLO</h1>
+                              <p>EXCITED? WE ARE ALMOST THERE...</p>
+                              <p><a class="btn btn-primary btn-lg submitOrder" href="#" role="button">SUBMIT</a></p>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     <!---end div for nav-->
-                    <!--div for logged in content-->
-                    <!--div for summary-->
-                      <div class="summary">
-                        <h3>YOUR SUBSCRIPTION</h3>
-                        <br>
-                        <table style="width:100%">
-                          <tr id="tableTitleSummary">
-                            <td>Product</td>
-                            <td>Price</td>
-                            <td>Quantity</td>
-                            <td>Date</td>
-                          </tr>
-                        </table>
-                      </div>
-                    <!--end of div for summary-->
-                    <!--div for shopping cart-->
-                      <div class="shoppingcart">
-                        <h3>SHOPPING CART</h3>
-                        <br>
-                        <table style="width:100%">
-                          <tr id="tableTitleSummary">
-                            <td>Item</td>
-                            <td>Price</td>
-                            <td>Quantity</td>
-                            <td>Add/Remove</td>
-                          </tr>
-                          <tr>
-                            <td>Total</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                          </tr>
-                        </table>
-                      </div>
-                    <!--end of div for shopping cart-->
-                    <!--div for address-->
-
-                    <div class="address">
-                      <!--div for shipping address-->
-                      <div class="shippingAddress">
-                        <h3>SHIPPING DETAILS</h3>
-                        <br>
-                        <form class="form-horizontal">
-                          <div class="form-group">
-                            <label for="sFirstName" class="col-sm-2 control-label">Recipient's First Name</label>
-                            <div class="col-sm-10">
-                              <input type="sFirstName" class="form-control" id="sFirstName" placeholder="First Name">
-                            </div>
-                          </div>
-                          <div class="form-group">
-                            <label for="sLastName" class="col-sm-2 control-label">Recipient's Last Name</label>
-                            <div class="col-sm-10">
-                              <input type="sLastName" class="form-control" id="sLastName" placeholder="Last Name">
-                            </div>
-                          </div>
-                          <div class="form-group">
-                            <label for="sStreet" class="col-sm-2 control-label">Street</label>
-                            <div class="col-sm-10">
-                              <input type="sStreet" class="form-control" id="sStreet" placeholder="Street">
-                            </div>
-                          </div>
-                          <div class="form-group">
-                            <label for="sCity" class="col-sm-2 control-label">City</label>
-                            <div class="col-sm-10">
-                              <input type="sCity" class="form-control" id="sCity" placeholder="City">
-                            </div>
-                          </div>
-                          <div class="form-group">
-                            <label for="sState" class="col-sm-2 control-label">State</label>
-                            <div class="col-sm-10">
-                              <input type="sState" class="form-control" id="sState" placeholder="State">
-                            </div>
-                          </div>
-                           <div class="form-group">
-                            <label for="sPostalCode" class="col-sm-2 control-label">PostalCode</label>
-                            <div class="col-sm-10">
-                              <input type="sPostalCode" class="form-control" id="sPostalCode" placeholder="Postal Code">
-                            </div>
-                          </div>
-                           <div class="form-group">
-                            <label for="sCountry" class="col-sm-2 control-label">Country</label>
-                            <div class="col-sm-10">
-                              <input type="sCountry" class="form-control" id="sCountry" placeholder="Country">
-                            </div>
-                          </div>
-                           <div class="form-group">
-                            <label for="sPhone" class="col-sm-2 control-label">Phone</label>
-                            <div class="col-sm-10">
-                              <input type="sPhone" class="form-control" id="sPhone" placeholder="Phone">
-                            </div>
-                          </div>
-                          <div class="form-group">
-                            <div class="col-sm-offset-2 col-sm-10">
-                              <div class="checkbox">
-                                <label>
-                                  <input type="checkbox"> Billing Address same as Shipping Address?
-                                </label>
-                              </div>
-                            </div>
-                          </div>
-                        </form>
-                      <!--end of div for shipping address-->
-
-                      <!--div for billing address-->
-                      <div class="billingAddress">
-                        <h3>BILLING DETAILS</h3>
-                        <br>
-                        <form class="form-horizontal">
-                          <div class="form-group">
-                            <label for="bFirstName" class="col-sm-2 control-label">First Name</label>
-                            <div class="col-sm-10">
-                              <input type="bFirstName" class="form-control" id="bFirstName" placeholder="First Name">
-                            </div>
-                          </div>
-                          <div class="form-group">
-                            <label for="bLastName" class="col-sm-2 control-label">Last Name</label>
-                            <div class="col-sm-10">
-                              <input type="bLastName" class="form-control" id="bLastName" placeholder="Last Name">
-                            </div>
-                          </div>
-                          <div class="form-group">
-                            <label for="bStreet" class="col-sm-2 control-label">Street</label>
-                            <div class="col-sm-10">
-                              <input type="bStreet" class="form-control" id="bStreet" placeholder="Street">
-                            </div>
-                          </div>
-                          <div class="form-group">
-                            <label for="bCity" class="col-sm-2 control-label">City</label>
-                            <div class="col-sm-10">
-                              <input type="bCity" class="form-control" id="bCity" placeholder="City">
-                            </div>
-                          </div>
-                          <div class="form-group">
-                            <label for="bState" class="col-sm-2 control-label">State</label>
-                            <div class="col-sm-10">
-                              <input type="bState" class="form-control" id="bState" placeholder="State">
-                            </div>
-                          </div>
-                           <div class="form-group">
-                            <label for="bPostalCode" class="col-sm-2 control-label">PostalCode</label>
-                            <div class="col-sm-10">
-                              <input type="bPostalCode" class="form-control" id="bPostalCode" placeholder="Postal Code">
-                            </div>
-                          </div>
-                           <div class="form-group">
-                            <label for="bCountry" class="col-sm-2 control-label">Country</label>
-                            <div class="col-sm-10">
-                              <input type="bCountry" class="form-control" id="bCountry" placeholder="Country">
-                            </div>
-                          </div>
-                           <div class="form-group">
-                            <label for="bPhone" class="col-sm-2 control-label">Phone</label>
-                            <div class="col-sm-10">
-                              <input type="bPhone" class="form-control" id="bPhone" placeholder="Phone">
-                            </div>
-                          </div>
-                          <div class="form-group">
-                            <div class="col-sm-offset-2 col-sm-10">
-                              <div class="checkbox">
-                                <label>
-                                  <input type="checkbox"> Billing Address same as Shipping Address?
-                                </label>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="form-group">
-                            <div class="col-sm-offset-2 col-sm-10">
-                              <button type="next" class="btn btn-primary">NEXT</button>
-                            </div>
-                          </div>
-                        </form>
-                      <!--end of div for billing address-->
-                    </div>
-                    <!--end of div for address-->
-                    <!--div for shipping method-->
-                      <div class="shippingMethod">
-                        <h3>SHIPPING METHOD</h3>
-                        <br>
-                        <div class="form-group">
-                          <div class="col-sm-offset-2 col-sm-10">
-                            <div class="checkbox">
-                              <label id="smallShipping">
-                                <input type="checkbox">Standard Shipping (Free)
-                              </label>
-                              <br>
-                              <label id="mediumShipping">
-                                <input type="checkbox">Priority Shipping (+$5)
-                              </label>
-                              <br>
-                              <label id="largeShipping">
-                                <input type="checkbox">Priority Shipping with Signature(+$10)
-                              </label>
-                            </div>
-                          </div>
-                        </div>
-
-                      </div>
-                    <!--end of div for shipping method-->
-                    <!--div for submit-->
-                      <div class="submit">
-                        <br>
-                        <div class="jumbotron">
-                          <h1>HELLO</h1>
-                          <p>EXCITED? WE ARE ALMOST THERE...</p>
-                          <p><a class="btn btn-primary btn-lg" href="#" role="button">SUBMIT</a></p>
-                        </div>
-                      </div>
-                    <!--end of div for submit-->
                     </div>
                   </div>
                   <div class="col-sm-1"></div>
