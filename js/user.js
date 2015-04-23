@@ -1,4 +1,22 @@
 $(document).ready(function(){
+	//-------------ADD ITEMS TO SHOPPING CART-----------
+	function newRow(item, price) {
+		var text  = '<tr><td>'
+		    text +=     item;
+		    text += '  </td><td>';
+		    text +=     price;
+		    text += '  </td><td>';
+		    text +=     1;
+		    text += '</td></tr>';
+
+		return text;
+   };
+
+	// $('.round').on("click", function(){
+	// });
+
+	//_____________END OF ADD ITEMS TO SHOPPING CART------
+
 	//-------------GET ALL ORDERS FOR USER------------
 	//-------------GET AUTHENTICATE---------------
 	$.ajax({
@@ -18,49 +36,57 @@ $(document).ready(function(){
 		}
 	});
 	//-----------END OF GET AUTHENTICATE------------
-});
 
 //-------------POST ORDER FOR USER------------
-	$('#postpostTweet').on("click", function(){
-		console.log("post tweet");
+	$('.submitOrder').on("click", function(){
+		console.log("post order");
+		
+		// var rows = $('#tableTitleSummary tr');
+		// var items = []
+		// for (var i = 0; i < rows.length; i++) {
+		// 	items.push({name: rows[i], quantity: ____ })
+		// };
+
 		$.ajax({
 	    type: "POST",
 	    url: "http://localhost:3000/orders",
 	    data: {
-        // tweet: {
-        //   message: $('#postingTweet').val()
-        // }
         order: {
-          'item': {
-            'name': 
-            'quantity': 
-          },
-          'shipping': {
-            'FirstName': $('#sFirstName').val()
-            'LastName': $('#sLastName').val()
-            'Address': {
-              'Street': $('#sStreet').val()
-              'City': $('#sCity').val()
-              'Country': $('#sCountry').val()
-              'State': $('#sState').val()
-              'PostalCode': $('#sPostalCode').val()
+           // 'items': items 
+          //  	{
+          //  		'name': 
+	        //     'quantity': 
+   			 	// 'price': 
+          //  	},
+          //  	{},
+          //  	{}
+          //  ],
+          shipping: {
+            FirstName: $('#sFirstName').val(),
+            LastName: $('#sLastName').val(),
+            Address: {
+              Street: $('#sStreet').val(),
+              City: $('#sCity').val(),
+              Country: $('#sCountry').val(),
+              State: $('#sState').val(),
+              PostalCode: $('#sPostalCode').val()
             },
-            'Phone': $('#sPhone').val()
+            Phone: $('#sPhone').val(),
           },
-          'billing':{
-          	'FirstName': $('#bLastName').val()
-          	'LastName': $('#sLastName').val()
-          	'Address': {
-              'Street': $('#sLastName').val()
-              'City': $('#sLastName').val()
-              'Country': $('#sLastName').val()
-              'State': $('#sLastName').val()
-              'PostalCode': $('#sLastName').val()
+          billing:{
+          	FirstName: $('#bFirstName').val(),
+          	LastName: $('#bLastName').val(),
+          	Address: {
+              Street: $('#bStreet').val(),
+              City: $('#bCity').val(),
+              Country: $('#bCountry').val(),
+              State: $('#bState').val(),
+              PostalCode: $('#bPostalCode').val()
           	},
-          	'Phone': 
-          }
-          'shippingMethod': 
-          'orderTime': Date()
+          	Phone: $('#bPhone').val()
+          },
+          // 'shippingMethod': 
+          orderTime: Date()
         }
       },
 	    dataType: 'json',
@@ -74,4 +100,6 @@ $(document).ready(function(){
 	    }
 	  });
 	});
-//-------------END OF POST ORDER FOR USER------------
+	//-------------END OF POST ORDER FOR USER------------
+
+});
