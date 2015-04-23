@@ -339,3 +339,8 @@ a.yellow:hover {
 ul.nav.nav-tabs li{
   display:inline;
 }
+
+#shoppingTotal{
+  font-weight: bold;
+  font-size: 20px;
+}
