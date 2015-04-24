@@ -81,7 +81,7 @@ $(document).ready(function(){
     success: function(response){
       console.log(response);
       console.log('authenticate');
-      if(response.message==="Authenticated"){
+      if(response.length===0){
         $('#cd-bg-5').show('slow');
         
 
@@ -107,6 +107,9 @@ $(document).ready(function(){
 		$.ajax({
 	    type: "POST",
 	    url: "http://localhost:3000/orders",
+      xhrFields: {
+      withCredentials: true
+      },
 	    data: {
         order: {
           'items': items,
