@@ -27,6 +27,45 @@ $(document).ready(function(){
   //     price: 15, quantity: 1
   //   }
   // }
+  $(document).on("click", '.deleteItem',function(){
+    var item = $($(this).parent().siblings()[0]).text(); 
+
+    // if (shoppingCart[item].quantity > 1){
+    //   shoppingCart[item].quantity--;
+    // } else {
+      delete shoppingCart[item];
+    // }
+
+    printingRow();
+
+  });
+
+  $(document).on("click", '.downItem',function(){
+    var item = $($(this).parent().siblings()[0]).text(); 
+
+    if (shoppingCart[item].quantity > 1){
+      shoppingCart[item].quantity--;
+    } else {
+      delete shoppingCart[item];
+    }
+
+    printingRow();
+
+  });
+
+  $(document).on("click", '.upItem',function(){
+    var item = $($(this).parent().siblings()[0]).text(); 
+
+      shoppingCart[item].quantity++;
+
+
+    printingRow();
+
+  });
+
+
+
+
 	$('.hotBotton').on("click", function(){
     var item = $(this).attr("id");
     var price = $(this).attr("value");
@@ -36,38 +75,30 @@ $(document).ready(function(){
     } else {
       shoppingCart[item].quantity++;
     }
-
-    $('#shoppingTable > tbody').html('');
-
-    var totalPrice = 0;
-
-    for (var key in shoppingCart) {
-      var item = key;
-      var price = shoppingCart[key].price;
-      var quantity = shoppingCart[key].quantity;
-      $('#shoppingBody').append('<tr><td>'+item+'</td><td>'+price+'</td><td>'+quantity+'</td><td><button class="deleteItem btn btn-danger">X</button></td></tr>');
-
-    $('.deleteItem').on("click", function(){
-      console.log('hahahaha');
-      console.log($(this).parent().siblings());
-      
-      if (shoppingCart[item].quantity > 1){
-        shoppingCart[item].quantity--;
-      } else {
-        delete shoppingCart[item];
-      }
-
-      $(this).parent().parent().remove();
-
-      // var item = $($($($($(this).parents())[1]).children())[0]).text();
-      // var price= $($($($($(this).parents())[1]).children())[1]).text();
-
-    });
-
-      totalPrice += parseInt(price) * parseInt(quantity);
-    }
-    $('#shoppingTotal').text("Total: $"+totalPrice);
+    printingRow();
 	});
+
+function printingRow(){
+  $('#shoppingTable > tbody').html('');
+  var totalPrice = 0;
+
+  for (var key in shoppingCart) {
+    var item = key;
+    var price = shoppingCart[key].price;
+    var quantity = shoppingCart[key].quantity;
+    $('#shoppingBody').append('<tr><td>'+
+      item+
+      '</td><td>'+
+      price+
+      '</td><td>'+
+      quantity+
+      '</td><td><button class="upItem btn btn-warning">+</button><button class="downItem btn btn-warning">-</button><button class="deleteItem btn btn-danger">X</button></td></tr>');
+
+    totalPrice += parseInt(price) * parseInt(quantity);
+  }
+  $('#shoppingTotal').text("Total: $"+totalPrice);
+
+}
 
 	//_____________END OF ADD ITEMS TO SHOPPING CART------
 
