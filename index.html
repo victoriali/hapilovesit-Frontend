@@ -71,12 +71,10 @@
         </h1>
       </div>
     </div>
-
     <!-- Subscribe-->
     <div id = "cd-bg-3">
       <div class = "verticalcover">
         <h1 class="secondSlidefirst">SUBSCRIBE</h1>
-       <!--  <h3 id="daysLeftForNextBox">days left to order for May's box</h3> -->
 
         <div class = "container">
           <div class="row no-gutter">
@@ -138,12 +136,12 @@
                     </div>
                     <div class="col-sm-1"></div>
                   </div>
-                </div>
-              </div>
+                </div><!-- end of col-sm-12-->
+              </div><!-- end of col-sm-10-->
               <div class="col-sm-1"></div>
-            </div>
-          </div>
-        </div> 
+            </div><!--end of inner cover-->
+          </div><!--end of row no gutter-->
+        </div> <!--end of contain-->
 
       </div>
     </div>
@@ -207,267 +205,255 @@
       </div>
     </div>
     <!--End of account-->
-    <!--modal for user sign in-->
-    <!-- <div class="modal fade signingIn" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h4 class="modal-title greetingArea" id="gridSystemModalLabel">
-              <button type="button" class="btn btn-primary" id="signOut"><span>SignOut</span></button>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            </h4>
-          </div>
-          <div class="modal-body">
-            <div class="container">
-              <div id="postTweet">
-                <h4 class="postTweets">Post a New Tweet</h4>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div> -->
-    <!--End of modal for user-->
+
     <!--Summary-->
-      <div id = "cd-bg-5">
-        <div class = "verticalcover">
-          <h2 class="secondSlidefirst" id="loginGreeting">GREETING</h2>
-            <div class = "container">
-              <div class="row">
-                <div class="col-sm-12">
-                  <div class="col-sm-1"></div>
-                  <div class="col-sm-10">
-                    <button type="button" class="btn btn-block btn-primary" id="signOutButton">LOG OUT</button>
-                    <div id="shoppingcartCover">
-                      <div role="tabpanel">
-                        <ul class="nav nav-tabs signIn" role="tablist">
-                          <li role="presentation" class="active col-xs-3"><a href="#Summary"       aria-controls="Summary"       role="tab" data-toggle="tab">Summary</a></li>
-                          <li role="presentation" class="col-xs-3">               <a href="#ShoppingCart"  aria-controls="ShoppingCart"  role="tab" data-toggle="tab">Shopping Cart</a></li>
-                          <li role="presentation" class="col-xs-3">               <a href="#Shipping"      aria-controls="Shipping"      role="tab" data-toggle="tab">Shipping</a></li>
-                          <!-- <li role="presentation">               <a href="#Address"       aria-controls="Address"       role="tab" data-toggle="tab">Address</a></li> -->
-                          <li role="presentation" class="col-xs-3">               <a href="#Confirmation"  aria-controls="Confirmation"  role="tab" data-toggle="tab">Confirmation</a></li>
-                        </ul>
+    <div id = "cd-bg-5">
+      <div class = "verticalcover">
+        <h2 class="secondSlidefirst" id="loginGreeting">GREETING</h2>
+        <div class = "container">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="col-sm-1"></div>
+              <div class="col-sm-10">
+                <button type="button" class="btn btn-block btn-primary" id="signOutButton">LOG OUT</button>
+                <div id="shoppingcartCover">
+                  <div role="tabpanel">
+                    <ul class="nav nav-tabs signIn" role="tablist">
+                      <li role="presentation" class="active col-xs-3"><a href="#Summary"       aria-controls="Summary"       role="tab" data-toggle="tab">Summary</a>
+                      </li>
+                      <li role="presentation" class="col-xs-3">               <a href="#ShoppingCart"  aria-controls="ShoppingCart"  role="tab" data-toggle="tab">Shopping Cart</a>
+                      </li>
+                      <li role="presentation" class="col-xs-3">               <a href="#Shipping"      aria-controls="Shipping"      role="tab" data-toggle="tab">Shipping</a>
+                      </li>
+                      <!-- <li role="presentation">               <a href="#Address"       aria-controls="Address"       role="tab" data-toggle="tab">Address</a></li> -->
+                      <li role="presentation" class="col-xs-3">               <a href="#Confirmation"  aria-controls="Confirmation"  role="tab" data-toggle="tab">Confirmation</a>
+                      </li>
+                    </ul>
 
-                        <!-- Tab panes -->
-                        <div class="tab-content">
-                          <!--Summary-->
-                          <div role="tabpanel" class="tab-pane fade in active" id="Summary">
-                            <h3>YOUR SUBSCRIPTION</h3>
-                            <br>
-                            <div class="noOrder">You don't have any orders. <a href="#cd-bg-3">SUBSCRIBE and BE HAPI =)</a>
-                          </div>     
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                      <!--Summary-->
+                      <div role="tabpanel" class="tab-pane fade in active" id="Summary">
+                        <h3>YOUR SUBSCRIPTION</h3>
+                        <br>
+                        <div class="noOrder">You don't have any orders. <a href="#cd-bg-3">SUBSCRIBE and BE HAPI =)</a>
+                        </div>     
 
-                          <div class="col-xs-12 orderHead">
-                            <div class="col-xs-3">
-                              Orders
-                            </div>
-                            <div class="col-xs-3">
-                              Items
-                            </div>
-                            <div class="col-xs-3">
-                              Total
-                            </div>
-                            <div class="col-xs-3">
-                              Date
-                            </div>
-                          </div> 
-
-                          <div class="col-xs-12 orderSummary">
+                        <div class="col-xs-12 orderHead">
+                          <div class="col-xs-1">
+                            Orders
                           </div>
+                          <div class="col-xs-4">
+                            Items
+                          </div>
+                          <div class="col-xs-2">
+                            Total
+                          </div>
+                          <div class="col-xs-5">
+                            Date
+                          </div>
+                        </div> 
+
+                        <div class="col-xs-12 orderSummary">
                         </div>
+                     <!--  </div> -->
+                    </div>
 
-                          <!--Shopping Cart-->
-                          <div role="tabpanel" class="tab-pane fade" id="ShoppingCart">
-                            <h3>SHOPPING CART</h3>
-                            <br>
-                            <table style="width:100%" id="shoppingTable" class="table table-hover table-striped">
-                              <thead>
-                                <tr>
-                                  <th style="text-align: center;">Item</th>
-                                  <th style="text-align: center;">Price</th>
-                                  <th style="text-align: center;">Quantity</th>
-                                  <th style="text-align: center;">Add/Remove</th>
-                                </tr>
-                              </thead>
-                              <tbody id="shoppingBody">
-                              </tbody>
-                            </table>
-                            <div id="shoppingTotal">Total:</div>
+
+                      <!--Shopping Cart-->
+                      <div role="tabpanel" class="tab-pane fade" id="ShoppingCart">
+                        <h3>SHOPPING CART</h3>
+                        <br>
+                        <table style="width:100%" id="shoppingTable" class="table table-hover table-striped">
+                          <thead>
+                            <tr>
+                              <th style="text-align: center;">Item</th>
+                              <th style="text-align: center;">Price</th>
+                              <th style="text-align: center;">Quantity</th>
+                              <th style="text-align: center;">Add/Remove</th>
+                            </tr>
+                          </thead>
+                          <tbody id="shoppingBody">
+                          </tbody>
+                        </table>
+                        <div id="shoppingTotal">Total:</div>
+                      </div>
+
+                      <!--Shipping Method-->
+                      <div role="tabpanel" class="tab-pane fade" id="Shipping">
+                        <h3>SHIPPING METHOD</h3>
+                        <br>
+                        <form role="form">
+                          <div class="radio">
+                            <label><input type="radio" name="optradio" value="0">Standard Shipping (Free)</label>
                           </div>
-
-                          <!--Shipping Method-->
-                          <div role="tabpanel" class="tab-pane fade" id="Shipping">
-                            <h3>SHIPPING METHOD</h3>
-                            <br>
-                            <form role="form">
-                              <div class="radio">
-                                <label><input type="radio" name="optradio" value="0">Standard Shipping (Free)</label>
-                              </div>
-                              <div class="radio">
-                                <label><input type="radio" name="optradio" value="5">Priority Shipping (+$5)</label>
-                              </div>
-                              <div class="radio">
-                                <label><input type="radio" name="optradio" value="10">Priority Shipping with Signature(+$10)</label>
-                              </div>
-                            </form>
+                          <div class="radio">
+                            <label><input type="radio" name="optradio" value="5">Priority Shipping (+$5)</label>
                           </div>
+                          <div class="radio">
+                            <label><input type="radio" name="optradio" value="10">Priority Shipping with Signature(+$10)</label>
+                          </div>
+                        </form>
+                      </div>
 
-                          <!--Address-->
-                          <div role="tabpanel" class="tab-pane fade" id="Address">
-                            <div class="shippingAddress">
-                              <h3>SHIPPING DETAILS</h3>
-                              <br>
-                              <form class="form-horizontal">
-                                <div class="form-group">
-                                  <label for="sFirstName" class="col-sm-2 control-label">Recipient's First Name</label>
-                                  <div class="col-sm-10">
-                                    <input type="sFirstName" class="form-control" id="sFirstName" placeholder="First Name">
-                                  </div>
-                                </div>
-                                <div class="form-group">
-                                  <label for="sLastName" class="col-sm-2 control-label">Recipient's Last Name</label>
-                                  <div class="col-sm-10">
-                                    <input type="sLastName" class="form-control" id="sLastName" placeholder="Last Name">
-                                  </div>
-                                </div>
-                                <div class="form-group">
-                                  <label for="sStreet" class="col-sm-2 control-label">Street</label>
-                                  <div class="col-sm-10">
-                                    <input type="sStreet" class="form-control" id="sStreet" placeholder="Street">
-                                  </div>
-                                </div>
-                                <div class="form-group">
-                                  <label for="sCity" class="col-sm-2 control-label">City</label>
-                                  <div class="col-sm-10">
-                                    <input type="sCity" class="form-control" id="sCity" placeholder="City">
-                                  </div>
-                                </div>
-                                <div class="form-group">
-                                  <label for="sState" class="col-sm-2 control-label">State</label>
-                                  <div class="col-sm-10">
-                                    <input type="sState" class="form-control" id="sState" placeholder="State">
-                                  </div>
-                                </div>
-                                 <div class="form-group">
-                                  <label for="sPostalCode" class="col-sm-2 control-label">PostalCode</label>
-                                  <div class="col-sm-10">
-                                    <input type="sPostalCode" class="form-control" id="sPostalCode" placeholder="Postal Code">
-                                  </div>
-                                </div>
-                                 <div class="form-group">
-                                  <label for="sCountry" class="col-sm-2 control-label">Country</label>
-                                  <div class="col-sm-10">
-                                    <input type="sCountry" class="form-control" id="sCountry" placeholder="Country">
-                                  </div>
-                                </div>
-                                 <div class="form-group">
-                                  <label for="sPhone" class="col-sm-2 control-label">Phone</label>
-                                  <div class="col-sm-10">
-                                    <input type="sPhone" class="form-control" id="sPhone" placeholder="Phone">
-                                  </div>
-                                </div>
-                                <div class="form-group">
-                                  <div class="col-sm-offset-2 col-sm-10">
-                                    <div class="checkbox">
-                                      <label>
-                                        <input type="checkbox"> Billing Address same as Shipping Address?
-                                      </label>
-                                    </div>
-                                  </div>
-                                </div>
-                              </form>
-                            <!--end of div for shipping address-->
-
-                            <!--div for billing address-->
-                              <h3>BILLING DETAILS</h3>
-                              <br>
-                              <form class="form-horizontal">
-                                <div class="form-group">
-                                  <label for="bFirstName" class="col-sm-2 control-label">First Name</label>
-                                  <div class="col-sm-10">
-                                    <input type="bFirstName" class="form-control" id="bFirstName" placeholder="First Name">
-                                  </div>
-                                </div>
-                                <div class="form-group">
-                                  <label for="bLastName" class="col-sm-2 control-label">Last Name</label>
-                                  <div class="col-sm-10">
-                                    <input type="bLastName" class="form-control" id="bLastName" placeholder="Last Name">
-                                  </div>
-                                </div>
-                                <div class="form-group">
-                                  <label for="bStreet" class="col-sm-2 control-label">Street</label>
-                                  <div class="col-sm-10">
-                                    <input type="bStreet" class="form-control" id="bStreet" placeholder="Street">
-                                  </div>
-                                </div>
-                                <div class="form-group">
-                                  <label for="bCity" class="col-sm-2 control-label">City</label>
-                                  <div class="col-sm-10">
-                                    <input type="bCity" class="form-control" id="bCity" placeholder="City">
-                                  </div>
-                                </div>
-                                <div class="form-group">
-                                  <label for="bState" class="col-sm-2 control-label">State</label>
-                                  <div class="col-sm-10">
-                                    <input type="bState" class="form-control" id="bState" placeholder="State">
-                                  </div>
-                                </div>
-                                 <div class="form-group">
-                                  <label for="bPostalCode" class="col-sm-2 control-label">PostalCode</label>
-                                  <div class="col-sm-10">
-                                    <input type="bPostalCode" class="form-control" id="bPostalCode" placeholder="Postal Code">
-                                  </div>
-                                </div>
-                                 <div class="form-group">
-                                  <label for="bCountry" class="col-sm-2 control-label">Country</label>
-                                  <div class="col-sm-10">
-                                    <input type="bCountry" class="form-control" id="bCountry" placeholder="Country">
-                                  </div>
-                                </div>
-                                 <div class="form-group">
-                                  <label for="bPhone" class="col-sm-2 control-label">Phone</label>
-                                  <div class="col-sm-10">
-                                    <input type="bPhone" class="form-control" id="bPhone" placeholder="Phone">
-                                  </div>
-                                </div>
-                                <div class="form-group">
-                                  <div class="col-sm-offset-2 col-sm-10">
-                                    <div class="checkbox">
-                                      <label>
-                                        <input type="checkbox"> Billing Address same as Shipping Address?
-                                      </label>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="form-group">
-                                  <div class="col-sm-offset-2 col-sm-10">
-                                    <button type="next" class="btn btn-primary">NEXT</button>
-                                  </div>
-                                </div>
-                              </form>
+                      <!--Address-->
+                      <div role="tabpanel" class="tab-pane fade" id="Address">
+                        <div class="shippingAddress">
+                          <h3>SHIPPING DETAILS</h3>
+                          <br>
+                          <form class="form-horizontal">
+                            <div class="form-group">
+                              <label for="sFirstName" class="col-sm-2 control-label">Recipient's First Name</label>
+                              <div class="col-sm-10">
+                                <input type="sFirstName" class="form-control" id="sFirstName" placeholder="First Name">
+                              </div>
                             </div>
-                          </div>
-
-                          <!--Confirmation-->
-                          <div role="tabpanel" class="tab-pane fade" id="Confirmation">
-                            <br>
-                            <div class="jumbotron">
-                              <h1>HELLO</h1>
-                              <p>EXCITED? WE ARE ALMOST THERE...</p>
-                              <p><a class="btn btn-primary btn-lg submitOrder" href="#" role="button">SUBMIT</a></p>
+                            <div class="form-group">
+                              <label for="sLastName" class="col-sm-2 control-label">Recipient's Last Name</label>
+                              <div class="col-sm-10">
+                                <input type="sLastName" class="form-control" id="sLastName" placeholder="Last Name">
+                              </div>
                             </div>
-                          </div>
+                            <div class="form-group">
+                              <label for="sStreet" class="col-sm-2 control-label">Street</label>
+                              <div class="col-sm-10">
+                                <input type="sStreet" class="form-control" id="sStreet" placeholder="Street">
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label for="sCity" class="col-sm-2 control-label">City</label>
+                              <div class="col-sm-10">
+                                <input type="sCity" class="form-control" id="sCity" placeholder="City">
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label for="sState" class="col-sm-2 control-label">State</label>
+                              <div class="col-sm-10">
+                                <input type="sState" class="form-control" id="sState" placeholder="State">
+                              </div>
+                            </div>
+                             <div class="form-group">
+                              <label for="sPostalCode" class="col-sm-2 control-label">PostalCode</label>
+                              <div class="col-sm-10">
+                                <input type="sPostalCode" class="form-control" id="sPostalCode" placeholder="Postal Code">
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label for="sCountry" class="col-sm-2 control-label">Country</label>
+                              <div class="col-sm-10">
+                                <input type="sCountry" class="form-control" id="sCountry" placeholder="Country">
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label for="sPhone" class="col-sm-2 control-label">Phone</label>
+                              <div class="col-sm-10">
+                                <input type="sPhone" class="form-control" id="sPhone" placeholder="Phone">
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <div class="col-sm-offset-2 col-sm-10">
+                                <div class="checkbox">
+                                  <label>
+                                    <input type="checkbox"> Billing Address same as Shipping Address?
+                                  </label>
+                                </div>
+                              </div>
+                            </div>
+                          </form>
+                        <!--end of div for shipping address-->
+
+                        <!--div for billing address-->
+                          <h3>BILLING DETAILS</h3>
+                          <br>
+                          <form class="form-horizontal">
+                            <div class="form-group">
+                              <label for="bFirstName" class="col-sm-2 control-label">First Name</label>
+                              <div class="col-sm-10">
+                                <input type="bFirstName" class="form-control" id="bFirstName" placeholder="First Name">
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label for="bLastName" class="col-sm-2 control-label">Last Name</label>
+                              <div class="col-sm-10">
+                                <input type="bLastName" class="form-control" id="bLastName" placeholder="Last Name">
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label for="bStreet" class="col-sm-2 control-label">Street</label>
+                              <div class="col-sm-10">
+                                <input type="bStreet" class="form-control" id="bStreet" placeholder="Street">
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label for="bCity" class="col-sm-2 control-label">City</label>
+                              <div class="col-sm-10">
+                                <input type="bCity" class="form-control" id="bCity" placeholder="City">
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label for="bState" class="col-sm-2 control-label">State</label>
+                              <div class="col-sm-10">
+                                <input type="bState" class="form-control" id="bState" placeholder="State">
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label for="bPostalCode" class="col-sm-2 control-label">PostalCode</label>
+                              <div class="col-sm-10">
+                                <input type="bPostalCode" class="form-control" id="bPostalCode" placeholder="Postal Code">
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label for="bCountry" class="col-sm-2 control-label">Country</label>
+                              <div class="col-sm-10">
+                                <input type="bCountry" class="form-control" id="bCountry" placeholder="Country">
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label for="bPhone" class="col-sm-2 control-label">Phone</label>
+                              <div class="col-sm-10">
+                                <input type="bPhone" class="form-control" id="bPhone" placeholder="Phone">
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <div class="col-sm-offset-2 col-sm-10">
+                                <div class="checkbox">
+                                  <label>
+                                    <input type="checkbox"> Billing Address same as Shipping Address?
+                                  </label>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <div class="col-sm-offset-2 col-sm-10">
+                                <button type="next" class="btn btn-primary">NEXT</button>
+                              </div>
+                            </div>
+                          </form>
                         </div>
                       </div>
-                    <!---end div for nav-->
-                    </div>
-                  </div>
-                  <div class="col-sm-1"></div>
-                </div>
-              </div>
-            </div>
-        </div>
-      </div>
+
+                      <!--Confirmation-->
+                      <div role="tabpanel" class="tab-pane fade" id="Confirmation">
+                        <br>
+                        <div class="jumbotron">
+                          <h1>HELLO</h1>
+                          <p>EXCITED? WE ARE ALMOST THERE...</p>
+                          <p><a class="btn btn-primary btn-lg submitOrder" href="#" role="button">SUBMIT</a></p>
+                        </div>
+                      </div>
+
+
+                   <!--  </div> -->
+                  </div><!--end of teb panel-->
+                <!---end div for nav-->
+                </div><!--end of shoppingcartcover-->
+              </div><!--end of col-sm-10-->
+              <div class="col-sm-1"></div>
+            </div><!--end of col-sm12-->
+          </div><!--end of row-->
+        </div><!--end of container-->
+      </div><!--end of vertical cover-->
+    </div><!--end of cd-bg-5-->
     <!--End of Summary-->
   </body>
 </html>

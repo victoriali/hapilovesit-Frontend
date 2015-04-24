@@ -352,3 +352,14 @@ ul.nav.nav-tabs li{
   font-weight: bold;
   font-size: 20px;
 }
+
+.orderHead {
+  background: white;
+  font-weight: bold;
+  border-bottom: 10px;
+}
+
+.orderSummary {
+  background: white;
+  word-wrap: break-word;
+}

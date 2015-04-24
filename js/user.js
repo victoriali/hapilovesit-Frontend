@@ -116,9 +116,9 @@ function printingRow(){
         $('.noOrder').hide();
 
         for(var n=0; n<response.length;n++){
-          var order = '<div class="col-xs-3">'+
-            response[n]['_id']+
-            '</div><div class="col-xs-3">'
+          var order = '<div class="col-xs-1">'+
+            n+ //response[n]['_id']+
+            '</div><div class="col-xs-4">'
 
             var totalPrice = 0;
             console.log(response[n].items);
@@ -130,9 +130,9 @@ function printingRow(){
               totalPrice += price * quantity;
             }
 
-            order += '</div><div class="col-xs-3">'+
+            order += '</div><div class="col-xs-2">'+
               totalPrice+
-              '</div><div class="col-xs-3">'+
+              '</div><div class="col-xs-5">'+
               response[n].orderTime+
               '</div>'
               console.log(order)
