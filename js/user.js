@@ -46,33 +46,28 @@ $(document).ready(function(){
       var price = shoppingCart[key].price;
       var quantity = shoppingCart[key].quantity;
       $('#shoppingBody').append('<tr><td>'+item+'</td><td>'+price+'</td><td>'+quantity+'</td><td><button class="deleteItem btn btn-danger">X</button></td></tr>');
-
-    $('.deleteItem').on("click", function(){
-      console.log('hahahaha');
-      console.log(this);
-
-      $(this).parent().siblings().remove();
-      $(this).parent().remove();
-
-      // var item = $($($($($(this).parents())[1]).children())[0]).text();
-      // var price= $($($($($(this).parents())[1]).children())[1]).text();
-
-      // if (shoppingCart[item].quantity > 1){
-      //   shoppingCart[item].quantity--;
-      // } else {
-      //   delete shoppingCart[item];
-      // }
-    });
-
       totalPrice += parseInt(price) * parseInt(quantity);
     }
+
+    // $('.deleteItem').on("click", function(){
+    //   var price = $($($(this).parent().siblings())[1]).text();
+    //   var quantity = $($($(this).parent().siblings())[2]).text();
+
+    //   shoppingCart
+
+    //   // if (shoppingCart[item].quantity > 1){
+    //   //   shoppingCart[item].quantity--;
+    //   // } else {
+    //   //   delete shoppingCart[item];
+    //   // }
+    // });
     $('#shoppingTotal').text("Total: $"+totalPrice);
 	});
 
 	//_____________END OF ADD ITEMS TO SHOPPING CART------
 
 	//-------------GET ALL ORDERS FOR USER------------
-    $.ajax({
+  $.ajax({
     type: "GET",
     url: "http://localhost:3000/orders",
     xhrFields: {
@@ -80,11 +75,15 @@ $(document).ready(function(){
     },
     success: function(response){
       console.log(response);
-      console.log('authenticate');
-      if(response.message==="Authenticated"){
-        $('#cd-bg-5').show('slow');
-        
 
+      if(response.length === 0){
+        $('#cd-bg-5').show('slow');
+        $('.hvOrder').hide();
+      }
+      if(response.length > 0){
+        $('.noOrder').hide();
+        $('.hvOrder').show();
+        
       }
     }
   });
@@ -107,6 +106,9 @@ $(document).ready(function(){
 		$.ajax({
 	    type: "POST",
 	    url: "http://localhost:3000/orders",
+      xhrFields: {
+      withCredentials: true
+      },
 	    data: {
         order: {
           'items': items,

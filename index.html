@@ -76,7 +76,7 @@
     <div id = "cd-bg-3">
       <div class = "verticalcover">
         <h1 class="secondSlidefirst">SUBSCRIBE</h1>
-        <h3 id="daysLeftForNextBox">days left to order for May's box</h3>
+<!--         <h3 id="daysLeftForNextBox">days left to order for May's box</h3> -->
 
         <div class = "container">
           <div class="row no-gutter">
@@ -253,20 +253,28 @@
                           <!--Summary-->
                           <div role="tabpanel" class="tab-pane fade in active" id="Summary">
                             <h3>YOUR SUBSCRIPTION</h3>
+
                             <br>
-                            <table style="width:100%" class="table table-hover table-striped">
-                              <thead>
-                                <tr>
-                                  <th style="text-align: center;">Product</th>
-                                  <th style="text-align: center;">Price</th>
-                                  <th style="text-align: center;">Quantity</th>
-                                  <th style="text-align: center;">Date</th>
-                                </tr>
-                              </thead>
-                              <tbody>
-                              </tbody>
-                            </table>
+
+                            <div class="noOrder">You don't have any orders. <a href="#cd-bg-3">SUBSCRIBE and BE HAPI =)</a>
+                            </div>
+
+                            <div class="hvOrder">
+                              <table style="width:100%" class="table table-hover table-striped">
+                                <thead>
+                                  <tr>
+                                    <th style="text-align: center;">Product</th>
+                                    <th style="text-align: center;">Price</th>
+                                    <th style="text-align: center;">Quantity</th>
+                                    <th style="text-align: center;">Date</th>
+                                  </tr>
+                                </thead>
+                                <tbody id="summaryBody">
+                                </tbody>
+                              </table>
+                            </div>
                           </div>
+                        </div>
 
                           <!--Shopping Cart-->
                           <div role="tabpanel" class="tab-pane fade" id="ShoppingCart">
