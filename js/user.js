@@ -10,6 +10,7 @@ $(document).ready(function(){
       console.log(response);
       console.log('authenticate');
       if(response.message==="Authenticated"){
+        console.log("authenticated")
         $('#cd-bg-5').show('slow');
         $('#loginGreeting').text('HI '+response.user+", YOU ARE LOGGED IN");
 
@@ -30,11 +31,7 @@ $(document).ready(function(){
   $(document).on("click", '.deleteItem',function(){
     var item = $($(this).parent().siblings()[0]).text(); 
 
-    // if (shoppingCart[item].quantity > 1){
-    //   shoppingCart[item].quantity--;
-    // } else {
       delete shoppingCart[item];
-    // }
 
     printingRow();
 
@@ -114,6 +111,34 @@ function printingRow(){
       console.log('authenticate');
       if(response.length===0){
         $('#cd-bg-5').show('slow');
+      }
+      if(response.length>0){
+        $('.noOrder').hide();
+
+        for(var n=0; n<response.length;n++){
+          var order = '<div class="col-xs-3">'+
+            response[n]['_id']+
+            '</div><div class="col-xs-3">'
+
+            var totalPrice = 0;
+            console.log(response[n].items);
+            for (var i = 0; i < response[n].items.length; i++){
+              var item = response[n].items[i].item;
+              var quantity = response[n].items[i].quantity;
+              var price = response[n].items[i].price;
+              order += '<div class="col-xs-12">'+quantity+' x '+item+'</div>'
+              totalPrice += price * quantity;
+            }
+
+            order += '</div><div class="col-xs-3">'+
+              totalPrice+
+              '</div><div class="col-xs-3">'+
+              response[n].orderTime+
+              '</div>'
+              console.log(order)
+            $(order).appendTo('.orderSummary');
+        }  
+
       }
     }
   });

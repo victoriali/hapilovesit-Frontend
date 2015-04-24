@@ -1,5 +1,6 @@
 $(document).ready(function(){
 //---------------Hide user login page at first--------------
+
 $('#cd-bg-5').hide();
 
 //-------------- Signup && SignIn && Authenticate Redirect-----------------
