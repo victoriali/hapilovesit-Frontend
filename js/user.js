@@ -1,4 +1,22 @@
 $(document).ready(function(){
+
+  $.ajax({
+    type: "GET",
+    url: "http://localhost:3000/authenticated",
+    xhrFields: {
+      withCredentials: true
+    },
+    success: function(response){
+      console.log(response);
+      console.log('authenticate');
+      if(response.message==="Authenticated"){
+        $('#cd-bg-5').show('slow');
+        $('#loginGreeting').text('HI '+response.user+", YOU ARE LOGGED IN");
+
+      }
+    }
+  });
+
 	//-------------ADD ITEMS TO SHOPPING CART-----------
   var shoppingCart = {};
   // var shoppingCart = { 
@@ -9,19 +27,6 @@ $(document).ready(function(){
   //     price: 15, quantity: 1
   //   }
   // }
-
-  // if (shoppingCart[item].quantity > 1){
-  //   shoppingCart[item].quantity--;
-  // } else {
-  //   delete shoppingCart[item];
-  // }
-
-
-  function newRow(item, price) {
-    var text  = '<tr><td>'+item+'</td><td>'+price+'</td><td>1</td><td></td></tr>'
-    return text;
-   };
-
 	$('.hotBotton').on("click", function(){
     var item = $(this).attr("id");
     var price = $(this).attr("value");
@@ -41,6 +46,24 @@ $(document).ready(function(){
       var price = shoppingCart[key].price;
       var quantity = shoppingCart[key].quantity;
       $('#shoppingBody').append('<tr><td>'+item+'</td><td>'+price+'</td><td>'+quantity+'</td><td><button class="deleteItem btn btn-danger">X</button></td></tr>');
+
+    $('.deleteItem').on("click", function(){
+      console.log('hahahaha');
+      console.log(this);
+
+      $(this).parent().siblings().remove();
+      $(this).parent().remove();
+
+      // var item = $($($($($(this).parents())[1]).children())[0]).text();
+      // var price= $($($($($(this).parents())[1]).children())[1]).text();
+
+      // if (shoppingCart[item].quantity > 1){
+      //   shoppingCart[item].quantity--;
+      // } else {
+      //   delete shoppingCart[item];
+      // }
+    });
+
       totalPrice += parseInt(price) * parseInt(quantity);
     }
     $('#shoppingTotal').text("Total: $"+totalPrice);
@@ -65,24 +88,6 @@ $(document).ready(function(){
       }
     }
   });
-	//-------------GET AUTHENTICATE---------------
-	$.ajax({
-		type: "GET",
-    url: "http://localhost:3000/authenticated",
-    xhrFields: {
-			withCredentials: true
-    },
-    success: function(response){
-    	console.log(response);
-    	console.log('authenticate');
-    	if(response.message==="Authenticated"){
-    		$('#cd-bg-5').show('slow');
-    		//print all orders if any
-
-    	}
-		}
-	});
-	//-----------END OF GET AUTHENTICATE------------
 
 //-------------POST ORDER FOR USER------------
 	$('.submitOrder').on("click", function(){

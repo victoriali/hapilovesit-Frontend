@@ -18,7 +18,11 @@ body,html{
 
 #logoTitle{
   font-family: 'Berkshire Swash', cursive;
-  
+  color:black;
+}
+
+.logoBrand a {
+  text-decoration: none;
 }
 
 ul.nav {     
@@ -89,6 +93,10 @@ ul.nav li{
   top: 300px;
   color: rgba(0,0,0,0.6);
   font-weight: bold;
+  background: rgba(225,225,225,0.5);
+  /*margin:- auto;
+  width: 60%;
+  text-align:center;*/
 }
 
 #cd-bg-2{

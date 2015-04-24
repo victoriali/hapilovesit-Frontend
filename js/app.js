@@ -1,6 +1,6 @@
 $(document).ready(function(){
 //---------------Hide user login page at first--------------
-// $('#cd-bg-5').hide();
+$('#cd-bg-5').hide();
 
 //-------------- Signup && SignIn && Authenticate Redirect-----------------
 	$('#signUpButton').on("click", function(){
@@ -119,8 +119,8 @@ $(document).ready(function(){
     			withCredentials: true
   	    },
 		    success: function(response){
-		      	console.log(response);
-		      	// $('#cd-bg-5').hide();
+	      	console.log(response);
+	      	$('#cd-bg-5').hide('slow');
 		    }
 		});
 	});
