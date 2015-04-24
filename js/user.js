@@ -49,19 +49,19 @@ $(document).ready(function(){
 
     $('.deleteItem').on("click", function(){
       console.log('hahahaha');
-      console.log(this);
+      console.log($(this).parent().siblings());
+      
+      if (shoppingCart[item].quantity > 1){
+        shoppingCart[item].quantity--;
+      } else {
+        delete shoppingCart[item];
+      }
 
-      $(this).parent().siblings().remove();
-      $(this).parent().remove();
+      $(this).parent().parent().remove();
 
       // var item = $($($($($(this).parents())[1]).children())[0]).text();
       // var price= $($($($($(this).parents())[1]).children())[1]).text();
 
-      // if (shoppingCart[item].quantity > 1){
-      //   shoppingCart[item].quantity--;
-      // } else {
-      //   delete shoppingCart[item];
-      // }
     });
 
       totalPrice += parseInt(price) * parseInt(quantity);
@@ -83,8 +83,6 @@ $(document).ready(function(){
       console.log('authenticate');
       if(response.length===0){
         $('#cd-bg-5').show('slow');
-        
-
       }
     }
   });
