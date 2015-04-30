@@ -20,14 +20,7 @@ $(document).ready(function(){
 
 	//-------------ADD ITEMS TO SHOPPING CART-----------
   var shoppingCart = {};
-  // var shoppingCart = { 
-  //   month: {
-  //     price: 14, quantity: 1
-  //   },
-  //   week: {
-  //     price: 15, quantity: 1
-  //   }
-  // }
+
   $(document).on("click", '.deleteItem',function(){
     var item = $($(this).parent().siblings()[0]).text(); 
 

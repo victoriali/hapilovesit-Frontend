@@ -135,7 +135,7 @@ ul.nav li{
   height: 100%;
 }
 
-@media (max-width: 768px){
+@media (max-width: 780px){
   #cd-bg-3{
   background-image: url("../images/Background/bg3a.jpg");
   background-repeat: repeat;
@@ -313,6 +313,113 @@ a.yellow:hover {
 }
 
 /*----------End of subscribe circle------*/
+
+/*----------How it works--------------*/
+
+#cd-bg-6{
+  background-image: url("../images/Background/bg3.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top left;
+  text-align: center;
+  height: 100%;
+}
+
+@media (max-width: 359px) and (min-width : 320px){
+  #cd-bg-6{
+    height: 700px;
+  }
+}
+
+@media (max-width: 650px) and (min-width : 360px){
+  #cd-bg-6{
+    height: 850px;
+  }
+}
+
+.wrap {
+  overflow: hidden;
+  margin: 10px;
+}
+.box {
+  float: left; /*used to be left*/
+  position: relative;
+  width: 20%;
+  padding-bottom: 20%; /*used to be 20%*/
+}
+.boxInner {
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  top: 10px;
+  bottom: 10px;
+  overflow: hidden;
+  max-width: 300px;
+  max-height: 300px;
+}
+.boxInner img {
+  width: 100%;
+  max-width: 300px;
+  max-height: 300px;
+}
+.boxInner .titleBox {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin-bottom: -50px;
+  background: #000;
+  background: rgba(0, 0, 0, 0.5);
+  color: #FFF;
+  padding: 10px;
+  text-align: center;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+.boxInner:hover .titleBox, body.touch .boxInner.touchFocus .titleBox {
+  margin-bottom: 0;
+}
+
+@media only screen and (max-width : 450px) {
+  .box {
+    width: 100%;
+    padding-bottom: 100%;
+  }
+}
+
+@media only screen and (max-width : 650px) and (min-width : 451px){
+  .box {
+    width: 50%;
+    padding-bottom: 50%;
+  }
+}
+
+@media only screen and (max-width : 1290px) and (min-width : 651px) {
+  .box {
+    width: 33.3%;
+    padding-bottom: 33.3%;
+  }
+}
+
+/*----------End of How it works-----------*/
+
+/*----------Past HapiBox--------------*/
+
+#cd-bg-7{
+  background-image: url("../images/Background/bg8.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top left;
+  text-align: center;
+  height: 100%;
+}
+
+
+/*----------End of Past HapiBox--------------*/
+
 #cd-bg-4{
   background-image: url("../images/Background/bg5.jpg");
   background-size: cover;
@@ -320,7 +427,6 @@ a.yellow:hover {
   background-position: top left;
   text-align: center;
   height: 100%;
-  /*opacity:0.5;*/
 }
 
 .btn-block{
@@ -356,10 +462,15 @@ ul.nav.nav-tabs li{
 .orderHead {
   background: white;
   font-weight: bold;
-  border-bottom: 10px;
+  border-bottom: 1px;
+  border-bottom-style: solid;
+  border-color: #bebebe;
 }
 
 .orderSummary {
   background: white;
   word-wrap: break-word;
 }
+
+
+
