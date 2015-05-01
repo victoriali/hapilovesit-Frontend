@@ -4,6 +4,10 @@ body,html{
   height: 100%;
 }
 
+h4{
+  text-align: center;
+}
+
 /*nav bar*/
 .navigatorTop{
   height: auto;
@@ -12,8 +16,12 @@ body,html{
   text-align: center;
   position:fixed;
   z-index:1;
-  background-color: white;
   width:100%;
+}
+
+.bgColor{
+  padding-top: 2px;
+  background-color: white;
 }
 
 #logoTitle{
@@ -31,11 +39,13 @@ ul.nav {
   margin-left: 0;     
   padding-top: 10px;         
   margin-bottom: 10px;
+  padding-bottom: 15px; 
+  text-align: center;
 }
 
 ul.nav a {  
   text-decoration: none;   
-  border-bottom: 5px;  
+  border-bottom: 10px;  
   padding: 15px 15px 15px 15px;      
   color: #333; 
 }
@@ -54,16 +64,24 @@ ul.nav li{
   display:inline;
 }
 
-/*---come back later*/
 .power-container{
-  background-color:none;
+  background-color: rgba(255, 255, 255, 0.9)
   display:block;
+  top:-28px;
+  margin-top: 0px;
+  position:relative;
+  z-index:0;
+  text-align: center;
 }
 
 @media (max-width: 768px){
   .power-container{
     display:none;
   }
+}
+
+.navbar-solid {
+  top: -65px;
 }
 
 /*content*/
@@ -94,9 +112,6 @@ ul.nav li{
   color: rgba(0,0,0,0.6);
   font-weight: bold;
   background: rgba(225,225,225,0.5);
-  /*margin:- auto;
-  width: 60%;
-  text-align:center;*/
 }
 
 #cd-bg-2{
@@ -135,52 +150,29 @@ ul.nav li{
   height: 100%;
 }
 
-@media (max-width: 780px){
+@media (max-width: 359px) and (min-width : 320px){
   #cd-bg-3{
-  background-image: url("../images/Background/bg3a.jpg");
-  background-repeat: repeat;
-  background-position: center left;
-  text-align: center;
-  height:1200px;
-  } 
+    height: 1000px;
+  }
 }
 
-}
-.subscribeHapi{
-  padding:0;
-  margin:0;
-  border:0;
-}
-
-/*.img-zoom img{
-margin:auto;
-height:100px;
-width:100px;
--moz-transition:-moz-transform 0.5s ease-in; 
--webkit-transition:-webkit-transform 0.5s ease-in; 
--o-transition:-o-transform 0.5s ease-in;
-}
-.img-zoom img:hover{
--moz-transform:scale(2); 
--webkit-transform:scale(2);
--o-transform:scale(2);
-}*/
-
-h4{
-  text-align: center;
+@media (max-width: 650px) and (min-width : 360px){
+  #cd-bg-3{
+    height: 1100px;
+  }
 }
 /*--------subscribe circle-----------*/
 ul {
   margin: auto auto; /*used to be 30*/
-  text-align: center;
+  text-align: left;
 }
 
 li {
   list-style: none;
   position: relative;
   display: inline-block;
-  width: 70px; /*used to be 100*/
-  height: 70px;/*used to be 100*/
+  width: 50px; /*used to be 100*/
+  height: 50px;/*used to be 100*/
 }
 
 @-moz-keyframes rotate {
@@ -327,25 +319,25 @@ a.yellow:hover {
 
 @media (max-width: 359px) and (min-width : 320px){
   #cd-bg-6{
-    height: 700px;
+    height: 1000px;
   }
 }
 
 @media (max-width: 650px) and (min-width : 360px){
   #cd-bg-6{
-    height: 850px;
+    height: 1100px;
   }
 }
 
 .wrap {
   overflow: hidden;
-  margin: 10px;
+  margin: 30px;
 }
 .box {
-  float: left; /*used to be left*/
+  float: left; 
   position: relative;
   width: 20%;
-  padding-bottom: 20%; /*used to be 20%*/
+  padding-bottom: 20%; 
 }
 .boxInner {
   position: absolute;
@@ -354,13 +346,17 @@ a.yellow:hover {
   top: 10px;
   bottom: 10px;
   overflow: hidden;
-  max-width: 300px;
-  max-height: 300px;
+  max-width: 400px;
+  max-height: 400px;
+  min-width: 200px;
+  min-height: 200px;
 }
 .boxInner img {
   width: 100%;
-  max-width: 300px;
-  max-height: 300px;
+  max-width: 400px;
+  max-height: 400px;
+  min-width: 200px;
+  min-height: 200px;
 }
 .boxInner .titleBox {
   position: absolute;
@@ -397,7 +393,7 @@ a.yellow:hover {
   }
 }
 
-@media only screen and (max-width : 1290px) and (min-width : 651px) {
+@media only screen and (min-width : 651px) {
   .box {
     width: 33.3%;
     padding-bottom: 33.3%;

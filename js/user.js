@@ -54,8 +54,6 @@ $(document).ready(function(){
   });
 
 
-
-
 	$('.hotBotton').on("click", function(){
     var item = $(this).attr("id");
     var price = $(this).attr("value");
@@ -100,8 +98,6 @@ function printingRow(){
       withCredentials: true
     },
     success: function(response){
-      console.log(response);
-      console.log('authenticate');
       if(response.length===0){
         $('#cd-bg-5').show('slow');
       }
@@ -114,7 +110,6 @@ function printingRow(){
             '</div><div class="col-xs-4">'
 
             var totalPrice = 0;
-            console.log(response[n].items);
             for (var i = 0; i < response[n].items.length; i++){
               var item = response[n].items[i].item;
               var quantity = response[n].items[i].quantity;
@@ -128,7 +123,6 @@ function printingRow(){
               '</div><div class="col-xs-5">'+
               response[n].orderTime+
               '</div>'
-              console.log(order)
             $(order).appendTo('.orderSummary');
         }  
 
@@ -137,8 +131,6 @@ function printingRow(){
   });
 
 //-------------POST ORDER FOR USER------------
-	$('.submitOrder').on("click", function(){
-		console.log("post order");
 		
 		var rows = $('#shoppingTable tbody tr');
     var items = [];
@@ -149,7 +141,6 @@ function printingRow(){
       var quantity = $($($(row).find('td')[2])).html();
       items.push({item: item, price: price, quantity: quantity});
     }
-    console.log(items);
 
 		$.ajax({
 	    type: "POST",
@@ -160,30 +151,7 @@ function printingRow(){
 	    data: {
         order: {
           'items': items,
-          // shipping: {
-          //   FirstName: $('#sFirstName').val(),
-          //   LastName: $('#sLastName').val(),
-          //   Address: {
-          //     Street: $('#sStreet').val(),
-          //     City: $('#sCity').val(),
-          //     Country: $('#sCountry').val(),
-          //     State: $('#sState').val(),
-          //     PostalCode: $('#sPostalCode').val()
-          //   },
-          //   Phone: $('#sPhone').val(),
-          // },
-          // billing:{
-          // 	FirstName: $('#bFirstName').val(),
-          // 	LastName: $('#bLastName').val(),
-          // 	Address: {
-          //     Street: $('#bStreet').val(),
-          //     City: $('#bCity').val(),
-          //     Country: $('#bCountry').val(),
-          //     State: $('#bState').val(),
-          //     PostalCode: $('#bPostalCode').val()
-          // 	},
-          // 	Phone: $('#bPhone').val()
-          // },
+          
           shippingMethod: $('input[name=optradio]:checked').attr('value'),
           orderTime: Date()
         }
