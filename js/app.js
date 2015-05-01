@@ -57,7 +57,7 @@ $('#cd-bg-5').hide();
 				      	if(response.message==="Authenticated"){
 				      		$('#cd-bg-5').show('slow');
 				      		$('#loginGreeting').text('HI '+$('#signUpUsername').val()+", YOU ARE LOGGED IN");
-
+									$("html, body").animate({ scrollTop: $(document).height() }, "slow");	      	
 				      	}
 							}
 						});
@@ -102,6 +102,7 @@ $('#cd-bg-5').hide();
 			      	if(response.message==="Authenticated"){
 			      		$('#cd-bg-5').show('slow');
 			      		$('#loginGreeting').text('HI '+$('#signInUsername').val()+", YOU ARE LOGGED IN");
+						  	$("html, body").animate({ scrollTop: $(document).height() }, "slow");
 			      	}
 						}
 					});
