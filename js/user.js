@@ -23,11 +23,8 @@ $(document).ready(function(){
 
   $(document).on("click", '.deleteItem',function(){
     var item = $($(this).parent().siblings()[0]).text(); 
-
-      delete shoppingCart[item];
-
+    delete shoppingCart[item];
     printingRow();
-
   });
 
   $(document).on("click", '.downItem',function(){
@@ -38,19 +35,13 @@ $(document).ready(function(){
     } else {
       delete shoppingCart[item];
     }
-
     printingRow();
-
   });
 
   $(document).on("click", '.upItem',function(){
     var item = $($(this).parent().siblings()[0]).text(); 
-
       shoppingCart[item].quantity++;
-
-
     printingRow();
-
   });
 
 
@@ -91,44 +82,55 @@ function printingRow(){
 	//_____________END OF ADD ITEMS TO SHOPPING CART------
 
 	//-------------GET ALL ORDERS FOR USER------------
-  $.ajax({
-    type: "GET",
-    url: "http://localhost:3000/orders",
-    xhrFields: {
-      withCredentials: true
-    },
-    success: function(response){
-      if(response.length===0){
-        $('#cd-bg-5').show('slow');
+
+  function orderUpdate(){
+    $.ajax({
+      type: "GET",
+      url: "http://localhost:3000/orders",
+      xhrFields: {
+        withCredentials: true
+      },
+      success: function(response){
+        if(response.length===0){
+          $('#cd-bg-5').show('slow');
+        }
+        if(response.length>0){
+          $('.noOrder').hide();
+
+          $('.orderSummary').html('');
+
+          for(var n=0; n<response.length;n++){
+            var order = '<div class="col-xs-1">'+
+              n+ 
+              '</div><div class="col-xs-4">'
+
+            var totalPrice = 0;
+            for (var i = 0; i < response[n].items.length; i++){
+              var item = response[n].items[i].item;
+              var quantity = response[n].items[i].quantity;
+              var price = response[n].items[i].price;
+              order += '<div class="col-xs-12">'+quantity+' x '+item+'</div>'
+              totalPrice += price * quantity;
+            }
+
+            order += '</div><div class="col-xs-2">'+
+              totalPrice+
+              '</div><div class="col-xs-5">'+
+              response[n].orderTime+
+              '</div>'
+            $(order).appendTo('.orderSummary');
+          }  
+        }
       }
-      if(response.length>0){
-        $('.noOrder').hide();
+    });
+  }
 
-        for(var n=0; n<response.length;n++){
-          var order = '<div class="col-xs-1">'+
-            n+ 
-            '</div><div class="col-xs-4">'
+  orderUpdate();
 
-          var totalPrice = 0;
-          for (var i = 0; i < response[n].items.length; i++){
-            var item = response[n].items[i].item;
-            var quantity = response[n].items[i].quantity;
-            var price = response[n].items[i].price;
-            order += '<div class="col-xs-12">'+quantity+' x '+item+'</div>'
-            totalPrice += price * quantity;
-          }
-
-          order += '</div><div class="col-xs-2">'+
-            totalPrice+
-            '</div><div class="col-xs-5">'+
-            response[n].orderTime+
-            '</div>'
-          $(order).appendTo('.orderSummary');
-        }  
-      }
-    }
+  $('#myTab a[href="#Summary"]').click(function(e){
+    e.preventDefault()
+    orderUpdate()
   });
-
 //-------------POST ORDER FOR USER------------
     
   $(document).on("click", '.submitOrder',function(){
@@ -142,7 +144,6 @@ function printingRow(){
       var quantity = $($($(row).find('td')[2])).html();
       items.push({item: item, price: price, quantity: quantity});
     }
-    console.log(items);
 
   	$.ajax({
       type: "POST",
@@ -160,45 +161,9 @@ function printingRow(){
       dataType: 'json',
       success: function(response){
         console.log("success", response);
-        //-------------GET ALL ORDER FOR USER--------------//
-        $.ajax({
-          type: "GET",
-          url: "http://localhost:3000/orders",
-          xhrFields: {
-            withCredentials: true
-          },
-          success: function(response){
-            if(response.length===0){
-              $('#cd-bg-5').show('slow');
-            }
-            if(response.length>0){
-              $('.noOrder').hide();
-
-              for(var n=0; n<response.length;n++){
-                var order = '<div class="col-xs-1">'+
-                  n+ //response[n]['_id']+
-                  '</div><div class="col-xs-4">'
-
-                var totalPrice = 0;
-                for (var i = 0; i < response[n].items.length; i++){
-                  var item = response[n].items[i].item;
-                  var quantity = response[n].items[i].quantity;
-                  var price = response[n].items[i].price;
-                  order += '<div class="col-xs-12">'+quantity+' x '+item+'</div>'
-                  totalPrice += price * quantity;
-                }
-
-                order += '</div><div class="col-xs-2">'+
-                  totalPrice+
-                  '</div><div class="col-xs-5">'+
-                  response[n].orderTime+
-                  '</div>'
-                $(order).appendTo('.orderSummary');
-              }  
-            }
-          }
-        });
-        //-------------END OF GET ALL ORDER FOR USER---------//
+        $("html, body").animate({ scrollTop: $(document).height() }, "slow"); 
+        $('#myTab a[href="#Summary"]').tab('show');
+        orderUpdate();
       }
     });
   });
