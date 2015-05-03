@@ -97,13 +97,15 @@ $('#cd-bg-5').hide();
 			  			withCredentials: true
 				    },
 				    success: function(response){
-			      	console.log(response);
-			      	console.log('authenticate');
 			      	if(response.message==="Authenticated"){
 			      		$('#cd-bg-5').show('slow');
 			      		$('#loginGreeting').text('HI '+$('#signInUsername').val()+", YOU ARE LOGGED IN");
 						  	$("html, body").animate({ scrollTop: $(document).height() }, "slow");
 			      	}
+						  if (response.message==="Unauthenticated"){
+				    		$('#warningWrongPassword').show("slow");
+				    		$('#warningWrongPassword').text('Oops, wrong password. Mind trying again?');
+				    	}
 						}
 					});
 						//------------end of authenticated redirect----------------------	    
