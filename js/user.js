@@ -13,7 +13,7 @@ $(document).ready(function(){
         console.log("authenticated")
         $('#cd-bg-5').show('slow');
         $('#loginGreeting').text('HI '+response.user+", YOU ARE LOGGED IN");
-
+        orderUpdate();
       }
     }
   });
@@ -124,9 +124,7 @@ function printingRow(){
       }
     });
   }
-
-  orderUpdate();
-
+  
   $('#myTab a[href="#Summary"]').click(function(e){
     e.preventDefault()
     orderUpdate()
