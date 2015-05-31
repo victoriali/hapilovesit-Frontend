@@ -125,6 +125,8 @@ function printingRow(){
     });
   }
   
+//-------------END OF GET ALL ORDERS FOR USER------------
+
   $('#myTab a[href="#Summary"]').click(function(e){
     e.preventDefault()
     orderUpdate()
